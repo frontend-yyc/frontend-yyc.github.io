@@ -9,6 +9,9 @@ eventDate: "Monday, March 2, 2026"
 eventTime: "5:30 PM - 6:30 PM"
 eventLocation: "Platform, Boardroom 2, 407 9 Avenue Southeast, Calgary, AB T2G 2K7"
 eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-modern-frontend-state-management-tickets-1983320752761"
+presenters:
+  - name: "Frontend & Beyond Community"
+    title: "Guest Speakers"
 ---
 
 ## Modern Frontend State Management

@@ -14,7 +14,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, author, image, eventbrite } = post.data;
+const { title, description, pubDate, author, image, eventbrite, presenters } =
+  post.data;
 
 const formattedDate = pubDate.toLocaleDateString("en-US", {
   year: "numeric",
@@ -67,6 +68,41 @@ const metadata = {
       >
         <Content />
       </div>
+
+      {
+        presenters && presenters.length > 0 && (
+          <div class="reveal mt-12 rounded-xl border border-border bg-card p-8">
+            <h2 class="mb-6 text-2xl font-bold text-foreground">
+              {presenters.length === 1 ? "Presenter" : "Presenters"}
+            </h2>
+            <div class="space-y-4">
+              {presenters.map((presenter) => (
+                <div class="flex flex-col">
+                  {presenter.page ? (
+                    <a
+                      href={presenter.page}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-lg font-semibold text-primary hover:underline"
+                    >
+                      {presenter.name}
+                    </a>
+                  ) : (
+                    <p class="text-lg font-semibold text-foreground">
+                      {presenter.name}
+                    </p>
+                  )}
+                  {presenter.title && (
+                    <p class="text-sm text-muted-foreground">
+                      {presenter.title}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      }
 
       {
         eventbrite && (

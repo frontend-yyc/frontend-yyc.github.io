@@ -15,6 +15,15 @@ const blog = defineCollection({
     eventDate: z.string().optional(),
     eventTime: z.string().optional(),
     eventLocation: z.string().optional(),
+    presenters: z
+      .array(
+        z.object({
+          name: z.string(),
+          title: z.string().optional(),
+          page: z.string().optional(),
+        }),
+      )
+      .optional(),
   }),
 });
 

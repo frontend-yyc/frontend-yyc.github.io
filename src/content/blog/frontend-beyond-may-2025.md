@@ -9,6 +9,9 @@ eventDate: "Monday, March 30, 2026"
 eventTime: "5:30 PM - 6:30 PM MST"
 eventLocation: "Calgary Public Library - Memorial Park, Meeting Room 2, 1221 2 Street Southwest, Calgary, AB T2R 1N8"
 eventbrite: "https://www.eventbrite.ca/e/dev-containers-with-claude-security-first-tickets-1985233302248"
+presenters:
+  - name: "Serge"
+    title: "Dev Containers & Security Expert"
 ---
 
 ## Dev Containers with Claude: Security First
