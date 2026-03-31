@@ -58,11 +58,11 @@ const metadata = {
 
       {
         presenters && presenters.length > 0 && (
-          <div class="reveal mb-8 rounded-xl border border-border bg-card p-8">
+          <div class="reveal mb-8 rounded-xl border border-border bg-card p-8 text-left">
             <div class="space-y-4">
               {presenters.map((presenter) => (
                 <div class="flex flex-col">
-                  <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-3 justify-start">
                     <Icon name="lucide:user" class="h-5 w-5 text-primary" />
                     {presenter.page ? (
                       <a
