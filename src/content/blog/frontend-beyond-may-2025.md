@@ -13,6 +13,7 @@ presenters:
   - name: "Serge Gatezh"
     page: "https://www.linkedin.com/in/gatezh/"
     title: "Seasoned Front-end Software Engineer and Simplicity virtuoso"
+slideDeck: "/presentations/Dev Containers with Claude_ Security First - Slidev.pdf"
 ---
 
 ## Dev Containers with Claude: Security First

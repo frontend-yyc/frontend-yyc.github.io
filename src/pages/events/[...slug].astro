@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Schema from "@/components/seo/Schema.astro";
+import { Icon } from "astro-icon/components";
 
 import { getCollection, render } from "astro:content";
 
@@ -14,8 +15,16 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, author, image, eventbrite, presenters } =
-  post.data;
+const {
+  title,
+  description,
+  pubDate,
+  author,
+  image,
+  eventbrite,
+  presenters,
+  slideDeck,
+} = post.data;
 
 const formattedDate = pubDate.toLocaleDateString("en-US", {
   year: "numeric",
@@ -88,6 +97,21 @@ const metadata = {
                 </div>
               ))}
             </div>
+          </div>
+        )
+      }
+
+      {
+        slideDeck && (
+          <div class="reveal mb-8 flex justify-center">
+            <a
+              href={slideDeck}
+              download
+              class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            >
+              <Icon name="lucide:download" class="h-5 w-5" />
+              Download Slide Deck
+            </a>
           </div>
         )
       }

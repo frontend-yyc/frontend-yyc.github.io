@@ -24,6 +24,7 @@ const blog = defineCollection({
         }),
       )
       .optional(),
+    slideDeck: z.string().optional(),
   }),
 });
 
