@@ -63,24 +63,29 @@ const metadata = {
               {presenters.map((presenter) => (
                 <div class="flex flex-col">
                   <div class="flex items-center gap-3 justify-start">
-                    <Icon name="lucide:user" class="h-5 w-5 text-primary" />
-                    {presenter.page ? (
-                      <a
-                        href={presenter.page}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-lg font-semibold text-primary hover:underline"
-                      >
-                        {presenter.name}
-                      </a>
-                    ) : (
-                      <p class="text-lg font-semibold text-foreground">
-                        {presenter.name}
-                      </p>
-                    )}
+                    <Icon
+                      name="lucide:user"
+                      class="h-6 w-6 text-primary flex-shrink-0"
+                    />
+                    <div class="flex-1">
+                      {presenter.page ? (
+                        <a
+                          href={presenter.page}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-lg font-semibold text-primary hover:underline"
+                        >
+                          {presenter.name}
+                        </a>
+                      ) : (
+                        <p class="text-lg font-semibold text-foreground">
+                          {presenter.name}
+                        </p>
+                      )}
+                    </div>
                   </div>
                   {presenter.title && (
-                    <p class="text-sm text-muted-foreground ml-8">
+                    <p class="text-sm text-muted-foreground ml-9">
                       {presenter.title}
                     </p>
                   )}
