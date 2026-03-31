@@ -7,11 +7,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const { remarkPluginFrontmatter } = await render(post);
-
-const readingTime = remarkPluginFrontmatter?.minutesRead
-  ? `${Math.ceil(remarkPluginFrontmatter.minutesRead)} min read`
-  : "";
+await render(post);
 ---
 
 <article
@@ -63,8 +59,6 @@ const readingTime = remarkPluginFrontmatter?.minutesRead
               })
             }
           </time>
-          {readingTime && <span aria-hidden="true">&bull;</span>}
-          {readingTime && <span>{readingTime}</span>}
         </div>
       </div>
     </div>
