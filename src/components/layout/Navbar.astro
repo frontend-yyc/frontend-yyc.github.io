@@ -19,7 +19,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
     </div>
 
     <!-- Desktop Menu -->
-    <div class="hidden md:flex md:flex-1 md:justify-center md:items-center">
+    <div class="hidden md:flex md:items-center md:gap-8">
       <div class="flex items-baseline space-x-8">
         {
           siteConfig.navLinks.map((link) => (
@@ -32,9 +32,6 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
           ))
         }
       </div>
-    </div>
-
-    <div class="hidden md:flex md:flex-shrink-0 items-center gap-4">
       <ThemeToggle />
     </div>
 
