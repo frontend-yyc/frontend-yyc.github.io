@@ -15,7 +15,7 @@ export async function GET(context) {
         title: post.data.title,
         pubDate: post.data.pubDate,
         description: post.data.description,
-        link: `/blog/${post.id}/`,
+        link: `/events/${post.id}/`,
         content: post.body, // Optional: include full content
         customData: post.data.author
           ? `<author>${post.data.author}</author>`
