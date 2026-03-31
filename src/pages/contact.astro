@@ -20,9 +20,19 @@ const description = [
     <p class="text-muted-foreground mb-6">Send us an email:</p>
     <a
       href="mailto:frontend.yyc@gmail.com"
-      class="inline-block bg-primary text-white dark:text-black px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+      class="inline-block bg-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors contact-btn"
     >
       frontend.yyc@gmail.com
     </a>
   </div>
 </BaseLayout>
+
+<style>
+  .contact-btn {
+    color: white;
+  }
+
+  [data-theme="dark"] .contact-btn {
+    color: black;
+  }
+</style>

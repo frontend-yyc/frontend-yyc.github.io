@@ -137,7 +137,7 @@ const metadata = {
               href={eventbrite}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block bg-primary text-white dark:text-black px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              class="inline-block bg-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors event-btn"
             >
               Register on Eventbrite →
             </a>
@@ -147,3 +147,13 @@ const metadata = {
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .event-btn {
+    color: white;
+  }
+
+  [data-theme="dark"] .event-btn {
+    color: black;
+  }
+</style>
