@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Schema from "@/components/seo/Schema.astro";
-import { Icon } from "astro-icon/components";
 
 import { getCollection, render } from "astro:content";
 
@@ -59,33 +58,30 @@ const metadata = {
       {
         presenters && presenters.length > 0 && (
           <div class="reveal mb-8 rounded-xl border border-border bg-card p-8 text-left">
+            <p class="mb-4 text-sm font-semibold tracking-wide text-primary uppercase">
+              Presented by
+            </p>
             <div class="space-y-4">
               {presenters.map((presenter) => (
                 <div class="flex flex-col">
-                  <div class="flex items-center gap-3 justify-start">
-                    <Icon
-                      name="lucide:user"
-                      class="h-6 w-6 text-primary flex-shrink-0"
-                    />
-                    <div class="flex-1">
-                      {presenter.page ? (
-                        <a
-                          href={presenter.page}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-lg font-semibold text-primary hover:underline"
-                        >
-                          {presenter.name}
-                        </a>
-                      ) : (
-                        <p class="text-lg font-semibold text-foreground">
-                          {presenter.name}
-                        </p>
-                      )}
-                    </div>
+                  <div>
+                    {presenter.page ? (
+                      <a
+                        href={presenter.page}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-lg font-semibold text-primary hover:underline"
+                      >
+                        {presenter.name}
+                      </a>
+                    ) : (
+                      <p class="text-lg font-semibold text-foreground">
+                        {presenter.name}
+                      </p>
+                    )}
                   </div>
                   {presenter.title && (
-                    <p class="text-sm text-muted-foreground ml-9">
+                    <p class="text-sm text-muted-foreground">
                       {presenter.title}
                     </p>
                   )}
