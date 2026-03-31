@@ -1,51 +1,57 @@
 ---
-title: "Frontend and Beyond — May 2025 Meetup"
-description: "Our May gathering for web developers — come for the talks, stay for the networking."
-pubDate: 2025-05-20
+title: "Dev Containers with Claude: Security First"
+description: "Learn about development container strategies centered on security with practical examples and best practices."
+pubDate: 2026-03-30
 author: "Frontend YYC"
 category: "Event"
-tags: ["meetup", "frontend", "calgary"]
+tags: ["meetup", "dev-containers", "security", "claude", "calgary"]
+eventDate: "Monday, March 30, 2026"
+eventTime: "5:30 PM - 6:30 PM MST"
+eventLocation: "Calgary Public Library - Memorial Park, Meeting Room 2, 1221 2 Street Southwest, Calgary, AB T2R 1N8"
+eventbrite: "https://www.eventbrite.ca/e/dev-containers-with-claude-security-first-tickets-1985233302248"
 ---
 
-## Spring Meetup: May Edition
+## Dev Containers with Claude: Security First
 
-Join us again for our May meetup! We're bringing together Calgary's web developer community for another evening of great talks, live demos, and meaningful connections.
+Join us for an in-depth session on development container strategies with a focus on security. Learn from Serge as he shares his journey through dev containers—from the security wake-up call that got him started, through practical hurdles and real-world solutions.
 
-### Event Agenda
+### Event Details
 
-**6:00 PM - 7:00 PM: Doors Open & Networking**
-Grab a drink, meet new developers, and catch up with folks from previous meetups.
+- **Date:** Monday, March 30, 2026
+- **Time:** 5:30 PM - 6:30 PM MST
+- **Location:** Calgary Public Library - Memorial Park, Meeting Room 2
+  - 1221 2 Street Southwest, Calgary, AB T2R 1N8
+- **Cost:** Free!
+- **Format:** In-person presentation with networking
 
-**7:00 PM - 7:15 PM: Community Updates**
-Hear what's happening in the Calgary web development community.
+### What You'll Learn
 
-**7:15 PM - 8:00 PM: Talk 1 - Web Performance Optimization**
-Discover techniques to make your web applications faster and more responsive.
+- **Security-Focused Dev Container Setup:** Best practices for securing your development environment
+- **Production-Ready Configuration:** Using Hugo, Bun, and Claude Code integration
+- **Version Syncing:** Managing versions with mise
+- **AI Agent Sandboxing:** Keeping your environment safe while using AI tools
+- **Prebuilt Image Optimization:** Creating efficient and secure container images
+- **Real-World Problem Solving:** Practical approaches to common dev container challenges
 
-**8:00 PM - 8:45 PM: Talk 2 - The Future of Web Development**
-Explore emerging technologies and trends shaping the future of web development.
+### Key Topics
 
-**8:45 PM - 9:30 PM: Open Discussion & Networking**
-Discuss takeaways, exchange ideas, and connect with fellow developers.
+- Alpine Linux best practices
+- Package management in containers
+- Integration with Claude Code
+- Building secure, repeatable development environments
+- Lessons learned from production deployments
 
-### Details
+### Get the Code
 
-- **Date:** May 20, 2025
-- **Time:** 6:00 PM - 9:30 PM
-- **Location:** Calgary, Alberta
-- **Admission:** Free!
+A public repository will be provided for attendees to build upon and use in their own projects.
 
-### What to Expect
+### Networking
 
-- **Educational Content:** Learn from experienced developers in our community
-- **Practical Demos:** See real-world examples and live coding
-- **Networking:** Build meaningful connections with fellow developers
-- **Community:** Be part of Calgary's vibrant web development scene
+Stick around after the session to network with fellow developers interested in containerization, security, and modern development workflows.
 
-### How to Attend
+### Register
 
-We'd love to have you join us! Please email [frontend.yyc@gmail.com](mailto:frontend.yyc@gmail.com) to RSVP and confirm your attendance. Spots fill up quickly, so don't wait!
+Spaces are limited! Register on Eventbrite to secure your spot:
+[Register on Eventbrite](https://www.eventbrite.ca/e/dev-containers-with-claude-security-first-tickets-1985233302248)
 
-### Questions?
-
-Have questions about the meetup? Want to suggest a topic or volunteer to speak? Reach out to us at [frontend.yyc@gmail.com](mailto:frontend.yyc@gmail.com) — we'd love to hear from you!
+Have questions? Reach out to us at [frontend.yyc@gmail.com](mailto:frontend.yyc@gmail.com)

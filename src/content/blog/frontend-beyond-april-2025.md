@@ -1,46 +1,43 @@
 ---
-title: "Frontend and Beyond — April 2025 Meetup"
-description: "Join us for an evening of talks, demos, and networking for web developers in Calgary."
-pubDate: 2025-04-15
+title: "Frontend and Beyond: Modern Frontend State Management"
+description: "Join us for an exciting dive into modern frontend state management with fellow developers in Calgary."
+pubDate: 2026-03-02
 author: "Frontend YYC"
 category: "Event"
-tags: ["meetup", "frontend", "calgary"]
+tags: ["meetup", "frontend", "state-management", "calgary"]
+eventDate: "Monday, March 2, 2026"
+eventTime: "5:30 PM - 6:30 PM"
+eventLocation: "Platform, Boardroom 2, 407 9 Avenue Southeast, Calgary, AB T2G 2K7"
+eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-modern-frontend-state-management-tickets-1983320752761"
 ---
 
-## Welcome to Frontend and Beyond!
+## Modern Frontend State Management
 
-We're excited to announce our April 2025 meetup. Come join fellow web developers in Calgary for an evening of learning, sharing, and networking.
+Join us for an exciting dive into the world of modern frontend state management. Whether you're a newcomer or an experienced developer, this session will cover the latest trends, patterns, and best practices in managing state in modern frontend applications.
 
-### What to Expect
+### Event Details
 
-**6:00 PM - 7:00 PM: Networking & Refreshments**
-Arrive early to connect with other web developers, grab some refreshments, and settle in.
-
-**7:00 PM - 7:15 PM: Welcome & Introductions**
-A quick introduction to our community and what we're all about.
-
-**7:15 PM - 8:00 PM: Talk 1 - Modern Frontend Patterns**
-Discover the latest trends and best practices in frontend development.
-
-**8:00 PM - 8:45 PM: Talk 2 - Building Scalable Web Applications**
-Learn strategies for building web applications that can grow with your needs.
-
-**8:45 PM - 9:00 PM: Closing & Final Networking**
-Wrap up the evening with more time to network and exchange contact information.
-
-### Location & Details
-
-- **Date:** April 15, 2025
-- **Time:** 6:00 PM - 9:00 PM
-- **Where:** Calgary, Alberta
+- **Date:** Monday, March 2, 2026
+- **Time:** 5:30 PM - 6:30 PM
+- **Location:** Platform, Boardroom 2
+  - 407 9 Avenue Southeast, Calgary, AB T2G 2K7
 - **Cost:** Free!
+- **Format:** In-person with networking
 
-### What to Bring
+### What You'll Learn
 
-- Yourself and your enthusiasm for web development!
-- A business card or contact info if you'd like to exchange with other developers
-- An open mind to learn from fellow developers
+- Modern state management patterns and approaches
+- Latest tools and frameworks for frontend state
+- Real-world best practices
+- Tips from experienced developers in our community
+
+### Networking
+
+Stay after the presentation to network with fellow developers, share experiences, and make connections with others passionate about frontend development.
 
 ### Register
 
-Space is limited, so please reach out to [frontend.yyc@gmail.com](mailto:frontend.yyc@gmail.com) to confirm your attendance. We look forward to seeing you there!
+Spaces are limited! Register on Eventbrite to secure your spot:
+[Register on Eventbrite](https://www.eventbrite.ca/e/frontend-beyond-modern-frontend-state-management-tickets-1983320752761)
+
+Have questions? Reach out to us at [frontend.yyc@gmail.com](mailto:frontend.yyc@gmail.com)

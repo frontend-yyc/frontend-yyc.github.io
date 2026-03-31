@@ -11,6 +11,10 @@ const blog = defineCollection({
     image: z.string().optional(),
     tags: z.array(z.string()).optional(),
     category: z.string().optional(),
+    eventbrite: z.string().optional(),
+    eventDate: z.string().optional(),
+    eventTime: z.string().optional(),
+    eventLocation: z.string().optional(),
   }),
 });
 
