@@ -10,8 +10,9 @@ eventTime: "5:30 PM - 6:30 PM"
 eventLocation: "Platform, Boardroom 2, 407 9 Avenue Southeast, Calgary, AB T2G 2K7"
 eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-modern-frontend-state-management-tickets-1983320752761"
 presenters:
-  - name: "Frontend & Beyond Community"
-    title: "Guest Speakers"
+  - name: "Alexey Volkov"
+    page: "https://www.linkedin.com/in/alexeyvolkov1986/"
+    title: "Founder at Clickly – visual builder for mobile apps where designers and developers collaborate in real-time"
 ---
 
 ## Modern Frontend State Management
