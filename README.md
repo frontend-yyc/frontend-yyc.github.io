@@ -2,8 +2,6 @@
 
 ## Content Management
 
-This template uses **Astro Content Collections** to manage blog posts.
-
 To add a new blog post, simply create a new `.md` or `.mdx` file inside the `src/content/blog/` directory.
 
 ### Frontmatter Schema
