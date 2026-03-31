@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Schema from "@/components/seo/Schema.astro";
+import { Icon } from "astro-icon/components";
 
 import { getCollection, render } from "astro:content";
 
@@ -61,22 +62,25 @@ const metadata = {
             <div class="space-y-4">
               {presenters.map((presenter) => (
                 <div class="flex flex-col">
-                  {presenter.page ? (
-                    <a
-                      href={presenter.page}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-lg font-semibold text-primary hover:underline"
-                    >
-                      {presenter.name}
-                    </a>
-                  ) : (
-                    <p class="text-lg font-semibold text-foreground">
-                      {presenter.name}
-                    </p>
-                  )}
+                  <div class="flex items-center gap-3">
+                    <Icon name="lucide:user" class="h-5 w-5 text-primary" />
+                    {presenter.page ? (
+                      <a
+                        href={presenter.page}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-lg font-semibold text-primary hover:underline"
+                      >
+                        {presenter.name}
+                      </a>
+                    ) : (
+                      <p class="text-lg font-semibold text-foreground">
+                        {presenter.name}
+                      </p>
+                    )}
+                  </div>
                   {presenter.title && (
-                    <p class="text-sm text-muted-foreground">
+                    <p class="text-sm text-muted-foreground ml-8">
                       {presenter.title}
                     </p>
                   )}
