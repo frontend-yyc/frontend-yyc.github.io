@@ -97,21 +97,18 @@ const metadata = {
                 </div>
               ))}
             </div>
-          </div>
-        )
-      }
-
-      {
-        slideDeck && (
-          <div class="reveal mb-8 flex justify-center">
-            <a
-              href={slideDeck}
-              download
-              class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-            >
-              <Icon name="lucide:download" class="h-5 w-5" />
-              Download Slide Deck
-            </a>
+            {slideDeck && (
+              <div class="mt-6 pt-6 border-t border-border">
+                <a
+                  href={slideDeck}
+                  download
+                  class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                >
+                  <Icon name="lucide:download" class="h-4 w-4" />
+                  Download slides
+                </a>
+              </div>
+            )}
           </div>
         )
       }
