@@ -1,5 +1,5 @@
 ---
-title: "Frontend and Beyond: Modern Frontend State Management"
+title: "Modern Frontend State Management"
 description: "Join us for an exciting dive into modern frontend state management with fellow developers in Calgary."
 pubDate: 2026-03-02
 author: "Frontend YYC"
