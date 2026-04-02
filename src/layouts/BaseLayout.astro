@@ -76,6 +76,19 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       // Run before the new page renders during View Transitions
       document.addEventListener("astro:after-swap", setTheme);
     </script>
+    <!-- Google Analytics -->
+    <script
+      async
+      is:inline
+      src="https://www.googletagmanager.com/gtag/js?id=G-9GTYNG6T3V"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args) {
+        dataLayer.push(args);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-9GTYNG6T3V");
+    </script>
   </head>
   <body
     class="bg-background text-foreground antialiased selection:bg-blue-500/30 dark:selection:text-blue-200"
