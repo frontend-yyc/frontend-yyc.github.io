@@ -1,11 +1,9 @@
 {
   "name": "Frontend and Beyond - Astro Dev",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
+  "image": "ghcr.io/gatezh/devcontainer-claude-bun:latest",
+  "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW"],
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/git:1": {}
   },
   "customizations": {
     "vscode": {
@@ -47,6 +45,5 @@
     }
   },
   "postCreateCommand": "npm install",
-  "remoteUser": "node",
   "mounts": []
 }
