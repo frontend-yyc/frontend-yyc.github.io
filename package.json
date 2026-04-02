@@ -4,17 +4,22 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:bun": "bun run dev",
     "build": "astro build",
+    "build:bun": "bun run build",
     "preview": "astro preview",
+    "preview:bun": "bun run preview",
     "astro": "astro",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "format": "prettier --write .",
     "fix": "npm run format && npm run lint",
+    "fix:bun": "bun run format && bun run lint",
     "test": "vitest",
     "check": "astro check",
     "typecheck": "tsc --noEmit",
     "build-preview": "npm run build && npm run preview",
+    "build-preview:bun": "bun run build && bun run preview",
     "prepare": "husky"
   },
   "dependencies": {
