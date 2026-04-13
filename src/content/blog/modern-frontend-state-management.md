@@ -13,6 +13,7 @@ presenters:
   - name: "Alexey Volkov"
     page: "https://www.linkedin.com/in/alexeyvolkov1986/"
     title: "Founder at Clickly – visual builder for mobile apps where designers and developers collaborate in real-time"
+    profileUrl: "/images/profiles/1677870237729.jpeg"
 slideDeck: "/presentations/Frontend and Beyond Modern Frontend State Management.pdf"
 ---
 
