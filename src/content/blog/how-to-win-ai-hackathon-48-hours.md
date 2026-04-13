@@ -18,7 +18,7 @@ tags:
 eventDate: "Tuesday, April 28, 2026"
 eventTime: "6:30 PM - 7:30 PM MST"
 eventLocation: "Calgary Public Library - Memorial Park, Meeting Room 2, 1221 2 Street Southwest, Calgary, AB T2R 1N8"
-eventbrite: "https://www.eventbrite.ca/e/how-to-win-ai-hackathon-48-hours"
+eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-how-to-win-an-ai-hackathon-in-48-hours-tickets-1987107676552"
 presenters:
   - name: "Andriy Kostenko"
     page: "https://www.linkedin.com/in/andriy-kostenko-02969021b/"
