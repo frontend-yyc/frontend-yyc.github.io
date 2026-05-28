@@ -27,7 +27,6 @@ Join us for an exciting dive into the world of modern frontend state management.
 - **Time:** 5:30 PM - 6:30 PM
 - **Location:** Platform, Boardroom 2
   - 407 9 Avenue Southeast, Calgary, AB T2G 2K7
-- **Cost:** Free!
 - **Format:** In-person with networking
 
 ### What You'll Learn
