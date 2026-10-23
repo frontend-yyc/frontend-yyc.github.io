@@ -15,9 +15,10 @@ tags:
     "mvp",
     "calgary",
   ]
-eventDate: "Tuesday, May 13, 2026"
-eventTime: "6:30 PM - 7:30 PM MST"
-eventLocation: "Calgary Public Library - Memorial Park, Meeting Room 2, 1221 2 Street Southwest, Calgary, AB T2R 1N8"
+startDate: "2026-05-13T18:30:00-06:00"
+endDate: "2026-05-13T19:30:00-06:00"
+venue: calgary-public-library-memorial-park
+room: "Meeting Room 2"
 eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-how-to-win-an-ai-hackathon-in-48-hours-tickets-1988735123289"
 presenters:
   - name: "Andriy Kostenko"

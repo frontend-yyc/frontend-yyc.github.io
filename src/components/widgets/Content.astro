@@ -8,6 +8,7 @@ const {
   title,
   subtitle,
   tagline,
+  titleAs,
   description = [],
   image,
   imageAlt = "",
@@ -33,6 +34,7 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
       subtitle={subtitle ||
         (Array.isArray(description) ? description.join(" ") : description)}
       tagline={tagline}
+      titleAs={titleAs}
       classes={{
         container: "mb-8",
         title: "text-4xl md:text-6xl font-bold mb-2",

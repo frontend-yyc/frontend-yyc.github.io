@@ -6,9 +6,9 @@ author: "Frontend YYC"
 category: "Event"
 tags:
   ["meetup", "cloudflare", "serverless", "workers", "react", "hono", "calgary"]
-eventDate: "Tuesday, October 20, 2026"
-eventTime: "6:00 PM - 7:00 PM MDT"
-eventLocation: "Calgary Public Library - Memorial Park, 1221 2 Street Southwest, Calgary, AB T2R 1N8"
+startDate: "2026-10-20T18:00:00-06:00"
+endDate: "2026-10-20T19:00:00-06:00"
+venue: calgary-public-library-memorial-park
 eventbrite: "https://www.eventbrite.ca/e/zero-servers-zero-dollars-shipping-real-apps-on-cloudflare-tickets-2003265290410"
 presenters:
   - name: "Serge Gatezh"
@@ -32,7 +32,7 @@ The talk makes two points:
 - **Date:** Tuesday, October 20, 2026
 - **Time:** 6:00 PM - 7:00 PM MDT
 - **Location:** Calgary Public Library - Memorial Park
-  - 1221 2 Street Southwest, Calgary, AB T2R 1N8
+  - 1221 2 Street Southwest, Calgary, AB T2R 0W5
 - **Cost:** Free!
 - **Format:** In-person presentation with networking
 

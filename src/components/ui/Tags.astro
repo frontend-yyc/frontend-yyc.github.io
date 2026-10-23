@@ -8,7 +8,7 @@ export interface Props {
 const { tags, class: className = "text-sm", tagClass } = Astro.props;
 const defaultTagClass =
   tagClass ||
-  "inline-block bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground px-3 py-1 rounded-full border border-border transition-colors duration-200";
+  "inline-block bg-muted/50 text-muted-foreground px-3 py-1 rounded-full border border-border";
 ---
 
 {
@@ -16,9 +16,7 @@ const defaultTagClass =
     <ul class:list={["flex flex-wrap gap-2", className]}>
       {tags.map((tag) => (
         <li class="inline-block relative">
-          <a href={`/blog/tags/${tag}`} class={defaultTagClass}>
-            #{tag}
-          </a>
+          <span class={defaultTagClass}>#{tag}</span>
         </li>
       ))}
     </ul>

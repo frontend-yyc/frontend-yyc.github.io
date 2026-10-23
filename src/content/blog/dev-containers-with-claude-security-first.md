@@ -5,9 +5,10 @@ pubDate: 2026-03-30
 author: "Frontend YYC"
 category: "Event"
 tags: ["meetup", "dev-containers", "security", "claude", "calgary"]
-eventDate: "Monday, March 30, 2026"
-eventTime: "5:30 PM - 6:30 PM MST"
-eventLocation: "Calgary Public Library - Memorial Park, Meeting Room 2, 1221 2 Street Southwest, Calgary, AB T2R 1N8"
+startDate: "2026-03-30T17:30:00-06:00"
+endDate: "2026-03-30T18:30:00-06:00"
+venue: calgary-public-library-memorial-park
+room: "Meeting Room 2"
 eventbrite: "https://www.eventbrite.ca/e/dev-containers-with-claude-security-first-tickets-1985233302248"
 presenters:
   - name: "Serge Gatezh"
@@ -24,9 +25,9 @@ Join us for an in-depth session on development container strategies with a focus
 ### Event Details
 
 - **Date:** Monday, March 30, 2026
-- **Time:** 5:30 PM - 6:30 PM MST
+- **Time:** 5:30 PM - 6:30 PM MDT
 - **Location:** Calgary Public Library - Memorial Park, Meeting Room 2
-  - 1221 2 Street Southwest, Calgary, AB T2R 1N8
+  - 1221 2 Street Southwest, Calgary, AB T2R 0W5
 - **Cost:** Free!
 - **Format:** In-person presentation with networking
 
