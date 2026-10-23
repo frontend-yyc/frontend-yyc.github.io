@@ -55,7 +55,7 @@ Follow Marianna on:
 ### Event Details
 
 - **Date:** Tuesday, May 26, 2026
-- **Time:** 6:00 PM – 7:00 PM MST
+- **Time:** 6:00 PM – 7:00 PM MDT
 - **Location:** Calgary Public Library - Memorial Park, Meeting Room 1
 
 ### Register

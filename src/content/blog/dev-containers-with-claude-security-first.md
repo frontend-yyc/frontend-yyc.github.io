@@ -27,7 +27,7 @@ Join us for an in-depth session on development container strategies with a focus
 ### Event Details
 
 - **Date:** Monday, March 30, 2026
-- **Time:** 5:30 PM - 6:30 PM MST
+- **Time:** 5:30 PM - 6:30 PM MDT
 - **Location:** Calgary Public Library - Memorial Park, Meeting Room 2
   - 1221 2 Street Southwest, Calgary, AB T2R 1N8
 - **Cost:** Free!

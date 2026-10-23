@@ -31,7 +31,7 @@ In this session we'll cover the basics of Remotion, explore what programmatic vi
 ### Event Details
 
 - **Date:** Tuesday, June 30, 2026
-- **Time:** 6:00 PM - 7:00 PM MST
+- **Time:** 6:00 PM - 7:00 PM MDT
 - **Location:** Calgary Public Library - Memorial Park, Meeting Room 2
   - 1221 2 Street Southwest, Calgary, AB T2R 1N8
 - **Cost:** Free!
