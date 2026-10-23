@@ -2,6 +2,13 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Schema from "@/components/seo/Schema.astro";
 import { Icon } from "astro-icon/components";
+import {
+  formatEventDate,
+  formatEventTime,
+  isUpcoming,
+  ogImagePath,
+} from "@/lib/events";
+import { eventSchema } from "@/lib/structured-data";
 
 import { getCollection, render } from "astro:content";
 
@@ -18,52 +25,36 @@ const { Content } = await render(post);
 const {
   title,
   description,
-  pubDate,
-  author,
   image,
   eventbrite,
+  location,
   presenters,
   slideDeck,
 } = post.data;
 
-const today = new Date();
-today.setUTCHours(0, 0, 0, 0);
-const isUpcoming = pubDate > today;
-
-const formattedDate = pubDate.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  timeZone: "UTC",
-});
-
 const metadata = {
-  title: title,
-  description: description,
-  ogImage: image,
+  title,
+  description,
+  ogImage: ogImagePath(post),
+  ogImageAlt: `${title}: ${formatEventDate(post)}, ${location.name}`,
 };
 ---
 
 <BaseLayout metadata={metadata}>
-  <Schema
-    type="BlogPosting"
-    data={{
-      title,
-      description,
-      image,
-      pubDate,
-      author,
-      url: Astro.url.href,
-    }}
-  />
+  <Schema slot="head" schema={eventSchema(post)} />
   <section class="relative px-4 py-8 sm:px-6 lg:px-8 md:py-12">
     <div class="relative mx-auto max-w-3xl">
       <div class="reveal mb-10 text-center">
         <p class="text-sm font-semibold tracking-wide text-primary uppercase">
-          {formattedDate} • {author}
+          <time datetime={post.data.startDate.toISOString()}>
+            {formatEventDate(post)}
+          </time>
+        </p>
+        <p class="mt-1 text-sm text-muted-foreground">
+          {formatEventTime(post)} · {location.name}
         </p>
         {
-          isUpcoming && (
+          isUpcoming(post) && (
             <div class="mt-3">
               <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700 dark:bg-green-900/30 dark:text-green-400">
                 Upcoming Event
@@ -117,6 +108,8 @@ const metadata = {
                   <img
                     src={presenters[0].profileUrl}
                     alt={presenters[0].name}
+                    width="128"
+                    height="128"
                     class="h-32 w-32 rounded-xl object-cover shadow-md"
                   />
                 </div>

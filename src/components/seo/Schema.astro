@@ -1,62 +1,10 @@
 ---
-import { siteConfig } from "@/config/site";
-
 interface Props {
-  type: "WebSite" | "BlogPosting" | "BreadcrumbList";
-  data: {
-    title?: string;
-    description?: string;
-    image?: string;
-    pubDate?: Date;
-    author?: string;
-    url?: string;
-  };
+  schema: Record<string, unknown>;
 }
 
-const { type, data } = Astro.props;
-
-let schema = {};
-
-if (type === "WebSite") {
-  schema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.name,
-    url: siteConfig.url,
-    description: siteConfig.description,
-    author: {
-      "@type": "Person",
-      name: siteConfig.author,
-    },
-    sameAs: [siteConfig.socialLinks.twitter, siteConfig.socialLinks.github],
-  };
-} else if (type === "BlogPosting") {
-  schema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: data.title,
-    description: data.description,
-    image: data.image,
-    datePublished: data.pubDate,
-    author: {
-      "@type": "Person",
-      name: data.author,
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": data.url,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      logo: {
-        "@type": "ImageObject",
-        // Placeholder, ideally should be a real logo URL
-        url: new URL("/favicon.svg", siteConfig.url).toString(),
-      },
-    },
-  };
-}
+// Escape "<" so a value containing "</script>" can't end the element early.
+const json = JSON.stringify(Astro.props.schema).replace(/</g, "\\u003c");
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script is:inline type="application/ld+json" set:html={json} />

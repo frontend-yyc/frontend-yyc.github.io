@@ -1,50 +1,25 @@
 ---
-interface Props {
-  title?: string;
-  description?: string;
-  ogImage?: string;
-  canonical?: string;
-  metadata?: {
-    title?: string;
-    description?: string;
-    ogImage?: string;
-    canonical?: string;
-    ignoreTitleTemplate?: boolean;
-  };
-}
-
+import type { ComponentProps } from "astro/types";
 import Seo from "@/components/seo/Seo.astro";
-import Schema from "@/components/seo/Schema.astro";
 import Navbar from "@/components/layout/Navbar.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
-import SpeedInsights from "@vercel/speed-insights/astro";
-import Analytics from "@vercel/analytics/astro";
 
 import { siteConfig } from "@/config/site";
 
-const { title, description, ogImage, canonical, metadata } = Astro.props;
+interface Props {
+  metadata?: ComponentProps<typeof Seo>;
+}
 
-const finalTitle = metadata?.title || title;
-const finalDescription = metadata?.description || description;
-const finalOgImage = metadata?.ogImage || ogImage;
-const finalCanonical = metadata?.canonical || canonical;
-const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
+const { metadata = {} } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={siteConfig.lang} class="scroll-smooth">
   <head>
-    <Seo
-      title={finalTitle}
-      description={finalDescription}
-      ogImage={finalOgImage}
-      canonical={finalCanonical}
-      ignoreTitleTemplate={finalIgnoreTitleTemplate}
-    />
+    <Seo {...metadata} />
     <ClientRouter />
-    <Schema type="WebSite" data={{}} />
     <slot name="head" />
     <script is:inline>
       const getTheme = () => {
@@ -119,8 +94,6 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       </main>
       <Footer />
     </div>
-    <SpeedInsights />
-    <Analytics />
     <script>
       // Keep a global reference to prevent duplicate observers during View Transitions
       let scrollObserver: IntersectionObserver | null = null;

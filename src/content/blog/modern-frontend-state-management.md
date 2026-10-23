@@ -5,9 +5,12 @@ pubDate: 2026-03-02
 author: "Frontend YYC"
 category: "Event"
 tags: ["meetup", "frontend", "state-management", "calgary"]
-eventDate: "Monday, March 2, 2026"
-eventTime: "5:30 PM - 6:30 PM"
-eventLocation: "Platform, Boardroom 2, 407 9 Avenue Southeast, Calgary, AB T2G 2K7"
+startDate: 2026-03-02T17:30:00-07:00
+endDate: 2026-03-02T18:30:00-07:00
+location:
+  name: "Platform"
+  streetAddress: "407 9 Avenue Southeast"
+  postalCode: "T2G 2K7"
 eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-modern-frontend-state-management-tickets-1983320752761"
 presenters:
   - name: "Alexey Volkov"

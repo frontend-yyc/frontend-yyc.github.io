@@ -8,6 +8,10 @@ import remarkReadingTime from "remark-reading-time";
 export default defineConfig({
   site: "https://frontend-yyc.github.io/",
   output: "static",
+  // GitHub Pages 301s /events to /events/, so links without the slash cost
+  // every visitor and crawler a redirect. "always" makes the dev server 404
+  // on them instead, so a missing slash is caught before deploy.
+  trailingSlash: "always",
   integrations: [sitemap(), icon(), mdx()],
   markdown: {
     remarkPlugins: [
@@ -19,13 +23,6 @@ export default defineConfig({
         };
       },
     ],
-  },
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es"],
-    routing: {
-      prefixDefaultLocale: false,
-    },
   },
   prefetch: {
     prefetchAll: true,
