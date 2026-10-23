@@ -5,6 +5,8 @@ import { Icon } from "astro-icon/components";
 import {
   formatEventDate,
   formatEventTime,
+  formatVenue,
+  getVenue,
   isUpcoming,
   ogImagePath,
 } from "@/lib/events";
@@ -27,21 +29,22 @@ const {
   description,
   image,
   eventbrite,
-  location,
+
   presenters,
   slideDeck,
 } = post.data;
+const venue = await getVenue(post);
 
 const metadata = {
   title,
   description,
   ogImage: ogImagePath(post),
-  ogImageAlt: `${title}: ${formatEventDate(post)}, ${location.name}`,
+  ogImageAlt: `${title}: ${formatEventDate(post)}, ${venue.name}`,
 };
 ---
 
 <BaseLayout metadata={metadata}>
-  <Schema slot="head" schema={eventSchema(post)} />
+  <Schema slot="head" schema={await eventSchema(post)} />
   <section class="relative px-4 py-8 sm:px-6 lg:px-8 md:py-12">
     <div class="relative mx-auto max-w-3xl">
       <div class="reveal mb-10 text-center">
@@ -51,7 +54,7 @@ const metadata = {
           </time>
         </p>
         <p class="mt-1 text-sm text-muted-foreground">
-          {formatEventTime(post)} · {location.name}
+          {formatEventTime(post)} · {formatVenue(post, venue)}
         </p>
         {
           isUpcoming(post) && (

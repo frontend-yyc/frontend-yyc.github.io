@@ -1,0 +1,21 @@
+# Event venues, referenced from event frontmatter by key: `venue: <key>`.
+# Google's Event rich result needs the full address, so write every field out.
+# Checked against each venue's own website on 2026-10-23.
+
+# https://calgarylibrary.ca/locations/mpark/
+calgary-public-library-memorial-park:
+  name: "Calgary Public Library - Memorial Park"
+  streetAddress: "1221 2 Street SW"
+  addressLocality: "Calgary"
+  addressRegion: "AB"
+  postalCode: "T2R 0W5"
+  addressCountry: "CA"
+
+# https://www.platformcalgary.com/contact
+platform-innovation-centre:
+  name: "Platform Innovation Centre"
+  streetAddress: "407 9th Avenue SE"
+  addressLocality: "Calgary"
+  addressRegion: "AB"
+  postalCode: "T2G 2K7"
+  addressCountry: "CA"

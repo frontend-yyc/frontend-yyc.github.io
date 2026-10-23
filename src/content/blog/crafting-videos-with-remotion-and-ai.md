@@ -5,12 +5,10 @@ pubDate: 2026-06-30
 author: "Frontend YYC"
 category: "Event"
 tags: ["meetup", "remotion", "react", "ai", "video", "claude", "calgary"]
-startDate: 2026-06-30T18:00:00-06:00
-endDate: 2026-06-30T19:00:00-06:00
-location:
-  name: "Calgary Public Library - Memorial Park"
-  streetAddress: "1221 2 Street Southwest"
-  postalCode: "T2R 1N8"
+startDate: "2026-06-30T18:00:00-06:00"
+endDate: "2026-06-30T19:00:00-06:00"
+venue: calgary-public-library-memorial-park
+room: "Meeting Room 2"
 eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-crafting-videos-with-remotion-and-ai-tickets-1991880502202"
 presenters:
   - name: "Sergii Sokurenko"
@@ -33,7 +31,7 @@ In this session we'll cover the basics of Remotion, explore what programmatic vi
 - **Date:** Tuesday, June 30, 2026
 - **Time:** 6:00 PM - 7:00 PM MDT
 - **Location:** Calgary Public Library - Memorial Park, Meeting Room 2
-  - 1221 2 Street Southwest, Calgary, AB T2R 1N8
+  - 1221 2 Street Southwest, Calgary, AB T2R 0W5
 - **Cost:** Free!
 - **Format:** In-person presentation with networking
 

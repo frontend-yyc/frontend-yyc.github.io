@@ -4,14 +4,26 @@ import satori from "satori";
 import sharp from "sharp";
 import type { CollectionEntry } from "astro:content";
 import { siteConfig } from "@/config/site";
-import { formatEventDate, formatEventTime } from "@/lib/events";
+import {
+  formatEventDate,
+  formatEventTime,
+  getVenue,
+  type StructuredDataRatio,
+} from "@/lib/events";
 
 const OG = { ...siteConfig.ogImage, scale: 1 };
 
-// Google's Event rich result asks for 16:9 at >= 720px wide (1920 ideal).
-// It is laid out at 1200x675 and rasterised at 1.6x, so the type scale
-// matches the Open Graph card.
-const WIDE = { width: 1200, height: 675, scale: 1.6 };
+// Google's Event rich result wants 16:9, 4:3 and 1:1 images, 1920px wide
+// ideally. Each is laid out 1200px wide and rasterised at 1.6x, so the type
+// scale matches the Open Graph card.
+const STRUCTURED_DATA: Record<
+  StructuredDataRatio,
+  { width: number; height: number; scale: number }
+> = {
+  "16x9": { width: 1200, height: 675, scale: 1.6 },
+  "4x3": { width: 1200, height: 900, scale: 1.6 },
+  "1x1": { width: 1200, height: 1200, scale: 1.6 },
+};
 
 const colors = {
   background: "#09090b",
@@ -20,17 +32,19 @@ const colors = {
   gradient: "linear-gradient(90deg, #60a5fa, #c084fc, #f472b6)",
 };
 
-type Child = Node | string | null | undefined | false;
+type JSXNode = Node | string | null | undefined | false;
 interface Node {
   type: string;
-  props: Record<string, unknown> & { children?: Child[] };
+  props: Record<string, unknown> & { children?: JSXNode[] };
 }
 
-// Satori consumes React-element-shaped objects; this saves pulling in React.
+// Satori consumes React-element-shaped objects. Not satori/jsx: its
+// createElement results don't type-check as children without JSX syntax, and
+// JSX here would need Vite's automatic JSX transform enabled project-wide.
 const h = (
   type: string,
   props: Record<string, unknown>,
-  ...children: Child[]
+  ...children: JSXNode[]
 ): Node => ({ type, props: { ...props, children: children.filter(Boolean) } });
 
 const fontFile = (weight: number) =>
@@ -61,7 +75,7 @@ const avatar = async (publicPath: string) => {
   return `data:image/png;base64,${png.toString("base64")}`;
 };
 
-const frame = (...children: Child[]) =>
+const frame = (...children: JSXNode[]) =>
   h(
     "div",
     {
@@ -116,7 +130,7 @@ const brand = (size: number) =>
     siteConfig.name,
   );
 
-const host = new URL(siteConfig.url).host;
+const host = new URL(import.meta.env.SITE).host;
 
 const siteCard = () =>
   frame(
@@ -155,7 +169,8 @@ const siteCard = () =>
   );
 
 const eventCard = async (event: CollectionEntry<"blog">) => {
-  const { title, location, presenters = [] } = event.data;
+  const { title, presenters = [] } = event.data;
+  const venue = await getVenue(event);
   const presenter = presenters[0];
   // The card already carries the brand, so don't repeat it in the headline.
   const headline = title.replace(/^Frontend (&|and) Beyond:\s*/i, "");
@@ -198,7 +213,7 @@ const eventCard = async (event: CollectionEntry<"blog">) => {
         },
         h("div", { style: { fontWeight: 600 } }, formatEventDate(event)),
         h("div", { style: { color: colors.muted } }, formatEventTime(event)),
-        h("div", { style: { color: colors.muted } }, location.name),
+        h("div", { style: { color: colors.muted } }, venue.name),
       ),
       presenter &&
         h(
@@ -230,9 +245,10 @@ const eventCard = async (event: CollectionEntry<"blog">) => {
 };
 
 const render = async (
-  tree: Node,
+  tree: JSXNode,
   { width, height, scale }: { width: number; height: number; scale: number },
 ) => {
+  // satori types its input as React's ReactNode, which Node mirrors.
   const svg = await satori(tree as never, {
     width,
     height,
@@ -248,5 +264,5 @@ export const renderSiteCard = async () => render(siteCard(), OG);
 
 export const renderEventCard = async (
   event: CollectionEntry<"blog">,
-  variant: "og" | "wide",
-) => render(await eventCard(event), variant === "og" ? OG : WIDE);
+  ratio?: StructuredDataRatio,
+) => render(await eventCard(event), ratio ? STRUCTURED_DATA[ratio] : OG);

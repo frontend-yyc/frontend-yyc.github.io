@@ -15,12 +15,10 @@ tags:
     "personal-brand",
     "calgary",
   ]
-startDate: 2026-05-26T18:00:00-06:00
-endDate: 2026-05-26T19:00:00-06:00
-location:
-  name: "Calgary Public Library - Memorial Park"
-  streetAddress: "1221 2 Street Southwest"
-  postalCode: "T2R 1N8"
+startDate: "2026-05-26T18:00:00-06:00"
+endDate: "2026-05-26T19:00:00-06:00"
+venue: calgary-public-library-memorial-park
+room: "Meeting Room 1"
 eventbrite: "https://www.eventbrite.ca/e/frontend-beyond-job-market-sucks-not-for-everyone-tickets-1989628474326"
 presenters:
   - name: "Marianna Hrynyshyn"

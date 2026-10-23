@@ -1,8 +1,14 @@
 import type { CollectionEntry } from "astro:content";
 import { siteConfig } from "@/config/site";
-import { eventPath, isUpcoming, wideImagePath } from "@/lib/events";
+import {
+  eventPath,
+  getVenue,
+  isUpcoming,
+  structuredDataImagePath,
+  structuredDataRatios,
+} from "@/lib/events";
 
-const absolute = (path: string) => new URL(path, siteConfig.url).href;
+const absolute = (path: string) => new URL(path, import.meta.env.SITE).href;
 
 const organization = {
   "@type": "Organization",
@@ -38,17 +44,16 @@ export const homeSchema = () => ({
 });
 
 // https://developers.google.com/search/docs/appearance/structured-data/event
-export const eventSchema = (event: CollectionEntry<"blog">) => {
+export const eventSchema = async (event: CollectionEntry<"blog">) => {
   const {
     title,
     description,
     startDate,
     endDate,
-    location,
     eventbrite,
     presenters = [],
   } = event.data;
-  const { name, ...address } = location;
+  const { name, ...address } = await getVenue(event);
 
   return {
     "@context": "https://schema.org",
@@ -56,7 +61,9 @@ export const eventSchema = (event: CollectionEntry<"blog">) => {
     name: title,
     description,
     url: absolute(eventPath(event)),
-    image: [absolute(wideImagePath(event))],
+    image: structuredDataRatios.map((ratio) =>
+      absolute(structuredDataImagePath(event, ratio)),
+    ),
     startDate: startDate.toISOString(),
     endDate: endDate.toISOString(),
     eventStatus: "https://schema.org/EventScheduled",

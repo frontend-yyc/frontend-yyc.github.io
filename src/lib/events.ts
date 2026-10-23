@@ -1,4 +1,4 @@
-import type { CollectionEntry } from "astro:content";
+import { getEntry, type CollectionEntry } from "astro:content";
 import { siteConfig } from "@/config/site";
 
 type Event = CollectionEntry<"blog">;
@@ -29,9 +29,33 @@ export const formatEventTime = (event: Event) =>
 // Evaluated at build time, so a deploy is what moves an event to "past".
 export const isUpcoming = (event: Event) => event.data.endDate > new Date();
 
+// reference() isn't checked when content syncs, so a typo in `venue:` would
+// otherwise surface as "cannot read properties of undefined" mid-build.
+export const getVenue = async (event: Event) => {
+  const venue = await getEntry(event.data.venue);
+  if (!venue) {
+    throw new Error(
+      `${event.id}: venue "${event.data.venue.id}" is not in src/data/venues.yaml`,
+    );
+  }
+  return venue.data;
+};
+
+// "Calgary Public Library - Memorial Park, Meeting Room 2"
+export const formatVenue = (
+  event: Event,
+  venue: CollectionEntry<"venues">["data"],
+) => [venue.name, event.data.room].filter(Boolean).join(", ");
+
 export const eventPath = (event: Event) => `/events/${event.id}/`;
 
 // Cards rendered by src/pages/og/[...path].png.ts.
 export const ogImagePath = (event: Event) => `/og/events/${event.id}.png`;
-export const wideImagePath = (event: Event) =>
-  `/og/events/${event.id}-16x9.png`;
+
+// Google's Event rich result asks for 16:9, 4:3 and 1:1 images.
+export const structuredDataRatios = ["16x9", "4x3", "1x1"] as const;
+export type StructuredDataRatio = (typeof structuredDataRatios)[number];
+export const structuredDataImagePath = (
+  event: Event,
+  ratio: StructuredDataRatio,
+) => `/og/events/${event.id}-${ratio}.png`;

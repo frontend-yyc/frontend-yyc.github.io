@@ -11,7 +11,7 @@ import { siteConfig } from "../src/config/site";
 const dist = path.resolve("dist");
 if (!existsSync(dist)) throw new Error("dist/ is missing: run `npm run build`");
 
-const site = `${siteConfig.url}/`;
+const site = new URL("/", import.meta.env.SITE).href;
 
 const htmlFiles = (readdirSync(dist, { recursive: true }) as string[])
   .filter((file) => file.endsWith(".html"))
@@ -121,11 +121,24 @@ describe("Event structured data", () => {
     expect(event.name).toBeTruthy();
     expect(event.startDate).toMatch(/T\d\d:\d\d/);
     expect(new Date(event.endDate) > new Date(event.startDate)).toBe(true);
-    expect(event.location.address.streetAddress).toBeTruthy();
-    expect(event.location.address.postalCode).toBeTruthy();
-    const { width, height } = await sharp(fileFor(event.image[0])).metadata();
-    expect(width).toBeGreaterThanOrEqual(1920);
-    expect(width! / height!).toBeCloseTo(16 / 9, 2);
+    expect(event.location.name).toBeTruthy();
+    for (const field of [
+      "streetAddress",
+      "addressLocality",
+      "addressRegion",
+      "postalCode",
+      "addressCountry",
+    ]) {
+      expect(event.location.address[field], field).toBeTruthy();
+    }
+    // 16:9, 4:3 and 1:1, each at Google's recommended 1920px width.
+    const ratios = [];
+    for (const image of event.image) {
+      const { width, height } = await sharp(fileFor(image)).metadata();
+      expect(width, image).toBe(1920);
+      ratios.push(width! / height!);
+    }
+    expect(ratios).toEqual([16 / 9, 4 / 3, 1]);
   });
 });
 
